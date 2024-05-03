@@ -1,0 +1,30 @@
+{
+    "manifest_version" : 3,
+    "name": "YouTube Simplified",
+    "version": "1.0",
+
+    "description": "A browser extension that simplifies YouTube's layout for maximum focus.",
+    "homepage_url": "https://github.com/Bsodoge/YouTube-Simplified",
+    "icons": {
+    },
+    "content_scripts": [
+        {
+            "matches":["https://*.youtube.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "browser_specific_settings": {
+	"gecko": {
+	    "id": "YouTube-Simplified@bsodoge"
+	}
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "action": {
+        "browser_style": true,
+        "default_title": "YouTube Simplified",
+        "default_popup": "popup.html"
+    }  
+}
