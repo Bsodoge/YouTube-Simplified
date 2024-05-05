@@ -13,11 +13,23 @@ const getSettings = (message) => {
 }
 
 const blockContent = () => {
-    document.getElementById('center').style.visibility = 'collapse';
+    document.getElementById('center').style.display = 'none';
+    document.getElementById('logo').style.display = 'none';
+    document.getElementById('start').style.display = 'none';
+    document.getElementById('guide').style.display = 'none';
+    document.getElementById('end').style.display = 'none';
+    document.getElementById('secondary').style.display = 'none';
+    document.getElementById('comments').style.display = 'none';
 }
 
 const unblockContent = () => {
-    document.getElementById('center').style.visibility = 'visible';
+    document.getElementById('center').style.display = 'initial';
+    document.getElementById('logo').style.display = 'initial';
+    document.getElementById('start').style.display = 'initial';
+    document.getElementById('guide').style.display = 'initial';
+    document.getElementById('end').style.display = 'initial';
+    document.getElementById('secondary').style.display = 'initial';
+    document.getElementById('comments').style.display = 'initial';
 }
 
 const onLoad = () => {
