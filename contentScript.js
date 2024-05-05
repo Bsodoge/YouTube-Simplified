@@ -4,6 +4,7 @@ let settings = {
 }
 
 const applySettings = (isToggled) => {
+    console.log(isToggled);
     if(isToggled) blockContent();
     else unblockContent();
 }
@@ -13,23 +14,27 @@ const getSettings = (message) => {
 }
 
 const blockContent = () => {
-    document.getElementById('center').style.display = 'none';
-    document.getElementById('logo').style.display = 'none';
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('guide').style.display = 'none';
-    document.getElementById('end').style.display = 'none';
-    document.getElementById('secondary').style.display = 'none';
-    document.getElementById('comments').style.display = 'none';
+    if(document.getElementById('center')) document.getElementById('center').style.display = 'none';
+    if(document.getElementById('logo')) document.getElementById('logo').style.display = 'none';
+    if(document.getElementById('start')) document.getElementById('start').style.display = 'none';
+    if(document.getElementById('guide')) document.getElementById('guide').style.display = 'none';
+    if(document.getElementById('end')) document.getElementById('end').style.display = 'none';
+    if(document.getElementById('secondary')) document.getElementById('secondary').style.display = 'none';
+    if(document.getElementById('comments')) document.getElementById('comments').style.display = 'none';
+    if(document.getElementById('related')) document.getElementById('related').style.display = 'none';
+    if(document.getElementsByClassName('ytp-endscreen-content')[0]) document.getElementsByClassName('ytp-endscreen-content')[0].style.display = 'none';
 }
 
 const unblockContent = () => {
-    document.getElementById('center').style.display = 'initial';
-    document.getElementById('logo').style.display = 'initial';
-    document.getElementById('start').style.display = 'initial';
-    document.getElementById('guide').style.display = 'initial';
-    document.getElementById('end').style.display = 'initial';
-    document.getElementById('secondary').style.display = 'initial';
-    document.getElementById('comments').style.display = 'initial';
+    if(document.getElementById('center')) document.getElementById('center').style.display = 'initial';
+    if(document.getElementById('logo')) document.getElementById('logo').style.display = 'initial';
+    if(document.getElementById('start')) document.getElementById('start').style.display = 'initial';
+    if(document.getElementById('guide')) document.getElementById('guide').style.display = 'initial';
+    if(document.getElementById('end')) document.getElementById('end').style.display = 'initial';
+    if(document.getElementById('secondary')) document.getElementById('secondary').style.display = 'initial';
+    if(document.getElementById('comments')) document.getElementById('comments').style.display = 'initial';
+    if(document.getElementById('related')) document.getElementById('related').style.display = 'initial';
+    if(document.getElementsByClassName('ytp-endscreen-content')[0]) document.getElementsByClassName('ytp-endscreen-content')[0].style.display = 'initial';
 }
 
 const onLoad = () => {
@@ -39,5 +44,14 @@ const onLoad = () => {
 }
 
 browser.runtime.onMessage.addListener(getSettings);
+
+const callback = (mutationsList, observer) => {
+    for (const mutation of mutationsList) {
+	onLoad();
+    }
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(document.body, {childList: true, subtree: true });
 
 onLoad();
