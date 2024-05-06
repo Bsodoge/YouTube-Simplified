@@ -10,6 +10,7 @@ let settings = {
 	end: false,
 	comments: false,
 	related: false,
+	search: false,
     }
 }
 
