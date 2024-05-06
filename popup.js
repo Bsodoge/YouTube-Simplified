@@ -29,7 +29,7 @@ const changeButtonText = () => {
 }
 
 const setSettings = () => {
-    let settings = {
+    settings = {
            isToggled,
             elements: {
   	    logo: true,
