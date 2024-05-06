@@ -11,7 +11,7 @@ let settings = {
 	end: true,
 	comments: true,
 	related: true,
-	search: true,
+	center: true,
     }
 }
 
@@ -41,7 +41,7 @@ const setSettings = () => {
 	    end: true,
 	    comments: true,
 	    related: true,
-	    search: true,
+	    center: true,
         }
     }
     browser.storage.local.set(settings);
