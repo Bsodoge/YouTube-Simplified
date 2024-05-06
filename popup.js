@@ -1,7 +1,17 @@
 const buttonToggle = document.getElementById('activate');
 let isToggled = false;
 let settings = {
-    isToggled : isToggled,
+    isToggled,
+    elements: {
+	logo: true,
+	secondary: true,
+	middle: true,
+	start: true,
+	guide: true,
+	end: true,
+	comments: true,
+	related: true,
+    }
 }
 
 buttonToggle.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true},toggleExtension));
@@ -19,8 +29,18 @@ const changeButtonText = () => {
 }
 
 const setSettings = () => {
-    settings = {
-        isToggled : isToggled,
+    let settings = {
+           isToggled,
+            elements: {
+  	    logo: true,
+	    secondary: true,
+	    middle: true,
+	    start: true,
+	    guide: true,
+	    end: true,
+	    comments: true,
+	    related: true,
+        }
     }
     browser.storage.local.set(settings);
 }
