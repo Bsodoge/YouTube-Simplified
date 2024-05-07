@@ -1,22 +1,49 @@
 const buttonToggle = document.getElementById('activate');
+const logoCheckBox = document.getElementById('logo');
+const reccomendationsCheckBox = document.getElementById('secondary');
+const commentsCheckBox = document.getElementById('comments');
+const endCheckBox = document.getElementById('end');
+const guideCheckBox = document.getElementById('guide');
+const middleCheckBox = document.getElementById('middle');
+const centerCheckBox = document.getElementById('center');
+const optionsCheckBox = document.getElementById('start');
+const checkBoxes = Array.from(document.querySelectorAll('input'));
 let isToggled = false;
 let settings = {
     isToggled,
     elements: {
-	logo: true,
-	secondary: true,
-	middle: true,
-	start: true,
-	guide: true,
-	end: true,
-	comments: true,
-	related: true,
-	center: true,
+	logo: logoCheckBox.checked,
+	secondary: reccomendationsCheckBox.checked,
+	middle: middleCheckBox.checked,
+	start: optionsCheckBox.checked,
+	guide: guideCheckBox.checked,
+	end: endCheckBox.checked,
+	comments: commentsCheckBox.checked,
+	related: reccomendationsCheckBox.checked,
+	center: centerCheckBox.checked,
     }
 }
 
 buttonToggle.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true},toggleExtension));
+logoCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('logo', tabs)));
+reccomendationsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('reccomendations', tabs)));
+commentsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('comments', tabs)));
+endCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('end', tabs)));
+guideCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('guide', tabs)));
+middleCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('middle', tabs)));
+centerCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('center', tabs)));
 
+const toggleElement = (element, tabs) => {
+    checkBoxes.forEach(checkBox => {
+	    if(checkBox.id === element){
+            settings.elements[element] = !settings.elements[element];
+            checkBox.checked = settings.elements[element];
+        } 
+    })
+    console.log(settings);
+    setSettings();
+    sendMessage(tabs)
+}
 const changeButtonText = () => {
     if(!isToggled){
         buttonToggle.innerText = "Activate";
@@ -31,17 +58,17 @@ const changeButtonText = () => {
 
 const setSettings = () => {
     settings = {
-           isToggled,
-            elements: {
-  	    logo: true,
-	    secondary: true,
-	    middle: true,
-	    start: true,
-	    guide: true,
-	    end: true,
-	    comments: true,
-	    related: true,
-	    center: true,
+        isToggled,
+        elements: {
+        logo: logoCheckBox.checked,
+        secondary: reccomendationsCheckBox.checked,
+        middle: middleCheckBox.checked,
+        start: optionsCheckBox.checked,
+        guide: guideCheckBox.checked,
+        end: endCheckBox.checked,
+        comments: commentsCheckBox.checked,
+        related: reccomendationsCheckBox.checked,
+        center: centerCheckBox.checked,
         }
     }
     browser.storage.local.set(settings);
@@ -50,6 +77,7 @@ const setSettings = () => {
 const onOpen = () => {
     browser.storage.local.get(settings).then((storageSettings) => {
         isToggled = storageSettings.isToggled;
+	    checkBoxes.forEach(checkBox => checkBox.checked = storageSettings.elements[checkBox.id]);
         changeButtonText();
         settings = storageSettings;
         browser.tabs.query({active:true,currentWindow:true},sendMessage);

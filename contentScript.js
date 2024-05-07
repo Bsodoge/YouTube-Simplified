@@ -19,14 +19,12 @@ const applySettings = (storageSettings) => {
     else unblockContent(storageSettings);
 }
 
-const getSettings = (message) => {
-    applySettings(message);
-}
-
 const blockContent = (settings) => {
     for(const element in settings.elements){
 	if(settings.elements[element] === true){
 	    if(document.getElementById(element)) document.getElementById(element).style.display = 'none';	
+	} else{
+	    if(document.getElementById(element)) document.getElementById(element).style.display = 'initial';	
 	}
     }
 }
@@ -45,11 +43,11 @@ const onLoad = () => {
     });
 }
 
-browser.runtime.onMessage.addListener(getSettings);
+browser.runtime.onMessage.addListener(applySettings);
 
 const callback = (mutationsList, observer) => {
     for (const mutation of mutationsList) {
-	onLoad();
+		onLoad();
     }
 };
 
