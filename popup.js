@@ -32,6 +32,7 @@ endCheckBox.addEventListener('click', () => browser.tabs.query({active:true,curr
 guideCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('guide', tabs)));
 middleCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('middle', tabs)));
 centerCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('center', tabs)));
+optionsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('start', tabs)));
 
 const toggleElement = (element, tabs) => {
     checkBoxes.forEach(checkBox => {
