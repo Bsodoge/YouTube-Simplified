@@ -10,7 +10,8 @@ let settings = {
 	comments: false,
 	related: false,
 	center: false,
-    left_sidebar: false
+    left_sidebar: false,
+	contents: false
     }
 }
 
