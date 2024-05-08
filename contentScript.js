@@ -11,7 +11,8 @@ let settings = {
 	related: false,
 	center: false,
     left_sidebar: false,
-	contents: false
+	contents: false,
+	primary: false
     }
 }
 

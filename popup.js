@@ -20,7 +20,8 @@ let settings = {
 	related: reccomendationsCheckBox.checked,
 	center: centerCheckBox.checked,
     left_sidebar: optionsCheckBox.checked,
-    contents: reccomendationsCheckBox.checked
+    contents: reccomendationsCheckBox.checked,
+    primary: reccomendationsCheckBox.checked
     }
 }
 
@@ -68,7 +69,8 @@ const setSettings = () => {
         related: reccomendationsCheckBox.checked,
         center: centerCheckBox.checked,
         left_sidebar: optionsCheckBox.checked,
-        contents: reccomendationsCheckBox.checked
+        contents: reccomendationsCheckBox.checked,
+        primary: reccomendationsCheckBox.checked
         }
     }
     browser.storage.local.set(settings);
