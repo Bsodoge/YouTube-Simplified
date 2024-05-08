@@ -10,6 +10,7 @@ let settings = {
 	comments: false,
 	related: false,
 	center: false,
+    left_sidebar: false
     }
 }
 
@@ -42,16 +43,17 @@ const onLoad = () => {
     });
 }
 
-browser.runtime.onMessage.addListener(applySettings);
 
 const callback = (mutationsList, observer) => {
-    for (const mutation of mutationsList) {
+	for (const mutation of mutationsList) {
 		onLoad();
     }
 };
 
+document.getElementsByTagName('ytd-mini-guide-renderer')[0].id = 'left_sidebar';
+browser.runtime.onMessage.addListener(applySettings);
 const observer = new MutationObserver(callback);
 observer.observe(document.body, {childList: true, subtree: true });
-
 onLoad();
+
 

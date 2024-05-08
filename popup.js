@@ -19,6 +19,7 @@ let settings = {
 	comments: commentsCheckBox.checked,
 	related: reccomendationsCheckBox.checked,
 	center: centerCheckBox.checked,
+    left_sidebar: optionsCheckBox.checked
     }
 }
 
@@ -65,6 +66,7 @@ const setSettings = () => {
         comments: commentsCheckBox.checked,
         related: reccomendationsCheckBox.checked,
         center: centerCheckBox.checked,
+        left_sidebar: optionsCheckBox.checked
         }
     }
     browser.storage.local.set(settings);
