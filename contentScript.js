@@ -11,7 +11,7 @@ let settings = {
 	related: false,
 	center: false,
     left_sidebar: false,
-	main: false,
+	ytd_browse: false,
     }
 }
 
@@ -48,7 +48,7 @@ const onLoad = () => {
 const callback = (mutationsList, observer) => {
 	for (const mutation of mutationsList) {
 		if(document.getElementsByTagName('ytd-mini-guide-renderer')[0] && document.getElementsByTagName('ytd-mini-guide-renderer')[0].id !== 'left_sidebar') document.getElementsByTagName('ytd-mini-guide-renderer')[0].id = 'left_sidebar';
-		if(document.getElementsByTagName('ytd-browse')[0] && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'main';
+		if(document.getElementsByTagName('ytd-browse')[0] && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'ytd_browse';
 
 		onLoad();
     }
