@@ -2,7 +2,6 @@ const buttonToggle = document.getElementById('activate');
 const reccomendationsCheckBox = document.getElementById('secondary');
 const commentsCheckBox = document.getElementById('comments');
 const endCheckBox = document.getElementById('end');
-const guideCheckBox = document.getElementById('guide');
 const middleCheckBox = document.getElementById('middle');
 const centerCheckBox = document.getElementById('center');
 const optionsCheckBox = document.getElementById('start');
@@ -29,7 +28,6 @@ buttonToggle.addEventListener('click', () => browser.tabs.query({active:true,cur
 reccomendationsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('reccomendations', tabs)));
 commentsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('comments', tabs)));
 endCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('end', tabs)));
-guideCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('guide', tabs)));
 middleCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('middle', tabs)));
 centerCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('center', tabs)));
 optionsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('start', tabs)));
