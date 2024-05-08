@@ -1,5 +1,4 @@
 const buttonToggle = document.getElementById('activate');
-const logoCheckBox = document.getElementById('logo');
 const reccomendationsCheckBox = document.getElementById('secondary');
 const commentsCheckBox = document.getElementById('comments');
 const endCheckBox = document.getElementById('end');
@@ -12,7 +11,6 @@ let isToggled = false;
 let settings = {
     isToggled,
     elements: {
-	logo: logoCheckBox.checked,
 	secondary: reccomendationsCheckBox.checked,
 	middle: middleCheckBox.checked,
 	start: optionsCheckBox.checked,
@@ -25,7 +23,6 @@ let settings = {
 }
 
 buttonToggle.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true},toggleExtension));
-logoCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('logo', tabs)));
 reccomendationsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('reccomendations', tabs)));
 commentsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('comments', tabs)));
 endCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('end', tabs)));
@@ -41,7 +38,6 @@ const toggleElement = (element, tabs) => {
             checkBox.checked = settings.elements[element];
         } 
     })
-    console.log(settings);
     setSettings();
     sendMessage(tabs)
 }
@@ -61,7 +57,6 @@ const setSettings = () => {
     settings = {
         isToggled,
         elements: {
-        logo: logoCheckBox.checked,
         secondary: reccomendationsCheckBox.checked,
         middle: middleCheckBox.checked,
         start: optionsCheckBox.checked,

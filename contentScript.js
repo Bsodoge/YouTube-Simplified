@@ -2,7 +2,6 @@ let isToggled = false;
 let settings = {
     isToggled,
     elements: {
-	logo: false,
 	secondary: false,
 	middle: false,
 	start: false,
@@ -20,19 +19,19 @@ const applySettings = (storageSettings) => {
 }
 
 const blockContent = (settings) => {
-    for(const element in settings.elements){
-	if(settings.elements[element] === true){
-	    if(document.getElementById(element)) document.getElementById(element).style.display = 'none';	
-	} else{
-	    if(document.getElementById(element)) document.getElementById(element).style.display = 'initial';	
+	for(const element in settings.elements){
+		if(settings.elements[element] === true){
+			if(document.getElementById(element)) document.getElementById(element).style.display = 'none';	
+		} else{
+			if(document.getElementById(element)) document.getElementById(element).style.display = '';	
 	}
-    }
+}
 }
 
 const unblockContent = (settings) => {
     for(const element in settings.elements){
 	if(settings.elements[element] === true){
-	    if(document.getElementById(element)) document.getElementById(element).style.display = 'initial';	
+	    if(document.getElementById(element)) document.getElementById(element).style.display = '';	
 	}
     }
 }
