@@ -4,7 +4,7 @@ const reccomendationsCheckBox = document.getElementById('secondary');
 const commentsCheckBox = document.getElementById('comments');
 const endCheckBox = document.getElementById('end');
 const centerCheckBox = document.getElementById('center');
-const optionsCheckBox = document.getElementById('options');
+const optionsCheckBox = document.getElementById('start');
 const checkBoxes = Array.from(document.querySelectorAll('input'));
 let isToggled = false;
 let optionsToggled = false;
@@ -54,8 +54,10 @@ const changeButtonText = () => {
 const toggleOptions = () => {
     if(!optionsToggled){
         optionsToggle.innerText = "Options +";
+        optionsToggled = true;
     } else{
-        buttonToggle.innerText = "Options -";
+        optionsToggle.innerText = "Options -";
+        optionsToggled = false;
     }
 }
 
