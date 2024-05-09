@@ -10,7 +10,6 @@ let settings = {
     isToggled,
     elements: {
 	secondary: reccomendationsCheckBox.checked,
-	middle: middleCheckBox.checked,
 	start: optionsCheckBox.checked,
 	guide: optionsCheckBox.checked,
 	end: endCheckBox.checked,
