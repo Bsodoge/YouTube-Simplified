@@ -41,12 +41,10 @@ const toggleElement = (element, tabs) => {
 const changeButtonText = () => {
     if(!isToggled){
         buttonToggle.innerText = "Activate";
-        title.classList.remove('titleActivate');
-        buttonToggle.classList.remove('buttonActivate');
+        buttonToggle.classList.remove('activated');
     } else{
         buttonToggle.innerText = "Deactivate";
-        title.classList.add('titleActivate');
-        buttonToggle.classList.add('buttonActivate')
+        buttonToggle.classList.add('activated')
     }
 }
 
