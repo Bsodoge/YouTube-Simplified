@@ -1,4 +1,5 @@
 const buttonToggle = document.getElementById('activate');
+const optionsToggle = document.getElementById('options');
 const reccomendationsCheckBox = document.getElementById('secondary');
 const commentsCheckBox = document.getElementById('comments');
 const endCheckBox = document.getElementById('end');
@@ -6,6 +7,7 @@ const centerCheckBox = document.getElementById('center');
 const optionsCheckBox = document.getElementById('start');
 const checkBoxes = Array.from(document.querySelectorAll('input'));
 let isToggled = false;
+let optionsToggled = false;
 let settings = {
     isToggled,
     elements: {
@@ -27,6 +29,7 @@ commentsCheckBox.addEventListener('click', () => browser.tabs.query({active:true
 endCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('end', tabs)));
 centerCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('center', tabs)));
 optionsCheckBox.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, (tabs) => toggleElement('start', tabs)));
+optionsToggle.addEventListener('click', () => browser.tabs.query({active:true,currentWindow:true}, toggleOptions));
 
 const toggleElement = (element, tabs) => {
     checkBoxes.forEach(checkBox => {
@@ -45,6 +48,14 @@ const changeButtonText = () => {
     } else{
         buttonToggle.innerText = "Deactivate";
         buttonToggle.classList.add('activated')
+    }
+}
+
+const toggleOptions = () => {
+    if(!optionsToggled){
+        optionsToggle.innerText = "Options +";
+    } else{
+        buttonToggle.innerText = "Options -";
     }
 }
 
