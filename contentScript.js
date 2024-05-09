@@ -3,7 +3,6 @@ let settings = {
     isToggled,
     elements: {
 	secondary: false,
-	middle: false,
 	start: false,
 	guide: false,
 	end: false,
