@@ -29,7 +29,7 @@ body{
     user-select: none;
 }
 
-.activate{
+.activate:hover{
     cursor: pointer;
     background-color: #272727;
 }
