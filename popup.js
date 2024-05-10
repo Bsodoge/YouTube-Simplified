@@ -12,7 +12,7 @@ let optionsToggled = false;
 let settings = {
     isToggled,
     elements: {
-	secondary: reccomendationsCheckBox.checked,
+	items: reccomendationsCheckBox.checked,
 	start: optionsCheckBox.checked,
 	guide: optionsCheckBox.checked,
 	end: endCheckBox.checked,
@@ -69,7 +69,7 @@ const setSettings = () => {
     settings = {
         isToggled,
         elements: {
-        secondary: reccomendationsCheckBox.checked,
+        items: reccomendationsCheckBox.checked,
         start: optionsCheckBox.checked,
     	guide: optionsCheckBox.checked,
         end: endCheckBox.checked,

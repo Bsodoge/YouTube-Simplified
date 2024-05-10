@@ -2,7 +2,7 @@ let isToggled = false;
 let settings = {
     isToggled,
     elements: {
-	secondary: false,
+	items: false,
 	start: false,
 	guide: false,
 	end: false,
