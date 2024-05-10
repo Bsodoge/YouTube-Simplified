@@ -22,9 +22,9 @@ const applySettings = (storageSettings) => {
 const blockContent = (settings) => {
 	for(const element in settings.elements){
 		if(settings.elements[element] === true){
-			if(document.getElementById(element)) document.getElementById(element).style.visibility = 'hidden';	
+			if(document.getElementById(element)) document.getElementById(element).style.display = 'none';	
 		} else{
-			if(document.getElementById(element)) document.getElementById(element).style.visibility = '';	
+			if(document.getElementById(element)) document.getElementById(element).style.display = '';	
 	}
 }
 }
@@ -32,7 +32,7 @@ const blockContent = (settings) => {
 const unblockContent = (settings) => {
     for(const element in settings.elements){
 	if(settings.elements[element] === true){
-	    if(document.getElementById(element)) document.getElementById(element).style.visibility = '';	
+	    if(document.getElementById(element)) document.getElementById(element).style.display = '';	
 	}
     }
 }
