@@ -24,6 +24,12 @@ h2,
     color: #7a7a7a;
 }
 
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 
 .source,
 .get{
@@ -33,6 +39,11 @@ h2,
     border: none;
     transition: all ease-in-out 0.25s;
     border: 1px solid #0f0f0f;
+}
+
+.source a,
+.get a{
+    all: unset;
 }
 
 .source:hover,
@@ -52,8 +63,19 @@ h2,
 }
 
 .get{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
     background-color: #0f0f0f;
     color: #f2f2f2;
+}
+
+.get img{
+    margin-top: 0;
+    background: none;
+    height: initial;
+    width: 20px;
 }
 
 img{
@@ -79,6 +101,19 @@ img{
 
 .card img{
     width: 50px;
+}
+
+.about h3{
+    font-size: 1.75rem;
+    font-weight: 900;
+}
+
+.about > *{
+    text-align: left;
+}
+
+.footer{
+    padding: 1.5rem;
 }
 
 @media (max-width: 1200px) {
