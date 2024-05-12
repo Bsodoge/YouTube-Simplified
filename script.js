@@ -9,10 +9,10 @@ const browserLinks = {
 }
 
 const browserImages = {
-    firefox: "/images/firefox.svg",
-    edge: "/images/edge.svg",
+    firefox: "images/firefox.svg",
+    edge: "images/edge.svg",
     opera: "opera",
-    chrome: "/images/chrome.svg"
+    chrome: "images/chrome.svg"
 }
 
 const browser = (function() {
