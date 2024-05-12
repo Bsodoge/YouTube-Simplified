@@ -85,10 +85,10 @@ img{
 }
 
 .cards_container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 0.5rem;
     max-width: 1165px;
 }
 
@@ -119,6 +119,9 @@ img{
 @media (max-width: 1200px) {
     img{
         width: 75%;
+    }
+    .cards_container{
+        flex-direction: column;
     }
 }
 
