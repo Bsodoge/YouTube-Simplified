@@ -48,8 +48,8 @@ const onLoad = () => {
 const callback = (mutationsList, observer) => {
 	for (const mutation of mutationsList) {
 		if(document.getElementsByTagName('ytd-mini-guide-renderer')[0] && document.getElementsByTagName('ytd-mini-guide-renderer')[0].id !== 'left_sidebar') document.getElementsByTagName('ytd-mini-guide-renderer')[0].id = 'left_sidebar';
-		if(document.getElementsByTagName('ytd-browse')[0] && location.href === 'https://www.youtube.com/' && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'ytd_browse';
-		if(document.getElementsByTagName('ytd-browse')[1] && location.href === 'https://www.youtube.com/' && document.getElementsByTagName('ytd-browse')[1].id !== 'main2') document.getElementsByTagName('ytd-browse')[1].id = 'ytd_browse2';
+		if(document.getElementsByTagName('ytd-browse')[0] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'ytd_browse';
+		if(document.getElementsByTagName('ytd-browse')[1] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[1].id !== 'main2') document.getElementsByTagName('ytd-browse')[1].id = 'ytd_browse2';
 
 		onLoad();
     }
