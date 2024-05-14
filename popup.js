@@ -22,6 +22,7 @@ let settings = {
     left_sidebar: optionsCheckBox.checked,
     ytd_browse: reccomendationsCheckBox.checked,
     ytd_browse2: reccomendationsCheckBox.checked,
+    player_end: reccomendationsCheckBox.checked,
     }
 }
 
@@ -79,6 +80,7 @@ const setSettings = () => {
         left_sidebar: optionsCheckBox.checked,
         ytd_browse: reccomendationsCheckBox.checked,
         ytd_browse2: reccomendationsCheckBox.checked,
+        player_end: reccomendationsCheckBox.checked,
         }
     }
     browser.storage.local.set(settings);
