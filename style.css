@@ -1,5 +1,6 @@
 body{
     background-color: #f9f9f9;
+    width: 200px; 
     padding: 0 2rem;
 }
 
@@ -7,6 +8,7 @@ body{
     font-family: "Gothic A1", sans-serif;
     font-weight: 400;
     font-style: normal; 
+    text-align: center;
 }
 
 .container{
@@ -60,6 +62,7 @@ body{
 }
 
 .settings_container{
+    all: unset;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
