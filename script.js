@@ -15,7 +15,7 @@ const browserImages = {
     chrome: "images/chrome.svg"
 }
 
-const browser = (function() {
+const browser = (function () {
     const test = regexp => regexp.test(window.navigator.userAgent);
     switch (true) {
         case test(/edg/i): "edge";
