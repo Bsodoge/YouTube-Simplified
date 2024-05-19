@@ -3,15 +3,11 @@ const getExtensionImage = document.getElementById("extension_image");
 
 const browserLinks = {
     firefox: "https://addons.mozilla.org/en-US/firefox/addon/youtube-simplified/",
-    edge: "edge",
-    opera: "opera",
     chrome: "chrome"
 }
 
 const browserImages = {
     firefox: "images/firefox.svg",
-    edge: "images/edge.svg",
-    opera: "opera",
     chrome: "images/chrome.svg"
 }
 
