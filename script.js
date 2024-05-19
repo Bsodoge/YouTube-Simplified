@@ -14,9 +14,7 @@ const browserImages = {
 const browser = (function () {
     const test = regexp => regexp.test(window.navigator.userAgent);
     switch (true) {
-        case test(/edg/i): "edge";
         case test(/firefox|fxios/i): return "firefox";
-        case test(/opr\//i): return "opera";
         case test(/chrome|chromium|crios/i): return "chrome";
         default: return "chrome";
     }
