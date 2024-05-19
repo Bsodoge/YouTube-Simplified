@@ -3,7 +3,7 @@ const getExtensionImage = document.getElementById("extension_image");
 
 const browserLinks = {
     firefox: "https://addons.mozilla.org/en-US/firefox/addon/youtube-simplified/",
-    chrome: "chrome"
+    chrome: "https://chromewebstore.google.com/detail/youtube-simplified/ofdlnilnphocpoekbagdkemgidmbfmjl?hl=en-GB&authuser=1"
 }
 
 const browserImages = {
