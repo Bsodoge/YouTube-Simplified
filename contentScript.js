@@ -13,6 +13,7 @@ let settings = {
 		ytd_browse: false,
 		ytd_browse2: false,
 		player_end: false,
+		below: false
 	}
 }
 
