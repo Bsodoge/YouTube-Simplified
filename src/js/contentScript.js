@@ -41,7 +41,7 @@ const unblockContent = (settings) => {
 }
 
 const onLoad = () => {
-	browser.storage.local.get(settings).then((storageSettings) => {
+	chrome.storage.local.get(settings).then((storageSettings) => {
 		applySettings(storageSettings);
 	});
 }
@@ -53,12 +53,11 @@ const callback = (mutationsList, observer) => {
 		if (document.getElementsByTagName('ytd-browse')[0] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'ytd_browse';
 		if (document.getElementsByTagName('ytd-browse')[1] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[1].id !== 'main2') document.getElementsByTagName('ytd-browse')[1].id = 'ytd_browse2';
 		if (document.getElementsByClassName('ytp-endscreen-content')[0] && document.getElementsByClassName('ytp-endscreen-content')[0].id !== 'player_end') document.getElementsByClassName('ytp-endscreen-content')[0].id = 'player_end';
-
 		onLoad();
 	}
 };
 
-browser.runtime.onMessage.addListener(applySettings);
+chrome.runtime.onMessage.addListener(applySettings);
 const observer = new MutationObserver(callback);
 observer.observe(document.body, { childList: true, subtree: true });
 onLoad();

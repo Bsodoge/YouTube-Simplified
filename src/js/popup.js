@@ -26,13 +26,13 @@ let settings = {
     }
 }
 
-buttonToggle.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, toggleExtension));
-reccomendationsCheckBox.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('reccomendations', tabs)));
-commentsCheckBox.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('comments', tabs)));
-endCheckBox.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('end', tabs)));
-centerCheckBox.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('center', tabs)));
-optionsCheckBox.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('start', tabs)));
-optionsToggle.addEventListener('click', () => browser.tabs.query({ active: true, currentWindow: true }, toggleOptions));
+buttonToggle.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, toggleExtension));
+reccomendationsCheckBox.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('reccomendations', tabs)));
+commentsCheckBox.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('comments', tabs)));
+endCheckBox.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('end', tabs)));
+centerCheckBox.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('center', tabs)));
+optionsCheckBox.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => toggleElement('start', tabs)));
+optionsToggle.addEventListener('click', () => chrome.tabs.query({ active: true, currentWindow: true }, toggleOptions));
 
 const toggleElement = (element, tabs) => {
     checkBoxes.forEach(checkBox => {
@@ -84,21 +84,21 @@ const setSettings = () => {
             below: reccomendationsCheckBox.checked
         }
     }
-    browser.storage.local.set(settings);
+    chrome.storage.local.set(settings);
 }
 
 const onOpen = () => {
-    browser.storage.local.get(settings).then((storageSettings) => {
+    chrome.storage.local.get(settings).then((storageSettings) => {
         isToggled = storageSettings.isToggled;
         checkBoxes.forEach(checkBox => checkBox.checked = storageSettings.elements[checkBox.id]);
         changeButtonText();
         settings = storageSettings;
-        browser.tabs.query({ active: true, currentWindow: true }, sendMessage);
+        chrome.tabs.query({ active: true, currentWindow: true }, sendMessage);
     });
 }
 
 const sendMessage = (tabs) => {
-    browser.tabs.sendMessage(tabs[0].id, settings);
+    chrome.tabs.sendMessage(tabs[0].id, settings);
 }
 
 const toggleExtension = (tabs) => {
