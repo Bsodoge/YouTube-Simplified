@@ -76,3 +76,27 @@ body{
    list-style: none; 
    font-size: 0.9rem;
 }
+
+.external-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+
+.external-link a{
+    color: #4493f8;
+}
+
+.external-link > img{
+	width: 25px;
+	height: 25px;
+}
+
+.external-links{
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	width: 100%;
+	gap: 8px;
+}
