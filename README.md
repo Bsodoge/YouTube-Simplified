@@ -9,7 +9,7 @@
 
 YouTube Simplified is a browser extension designed to keep you focused and productive while watching videos on YouTube on Firefox and Chromium browsers.
 
-![Alt Text](/images/examplegif.gif)
+![Alt Text](examplegif.gif)
 
 Features include:
 - Ability to hide the search bar
