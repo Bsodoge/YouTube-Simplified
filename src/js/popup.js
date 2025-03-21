@@ -81,7 +81,6 @@ const setSettings = () => {
             ytd_browse: reccomendationsCheckBox.checked,
             ytd_browse2: reccomendationsCheckBox.checked,
             player_end: reccomendationsCheckBox.checked,
-            below: reccomendationsCheckBox.checked
         }
     }
     chrome.storage.local.set(settings);
