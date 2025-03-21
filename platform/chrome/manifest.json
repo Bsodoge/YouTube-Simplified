@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "matches":["https://*.youtube.com/*"],
-            "js": ["contentScript.js"]
+            "js": ["js/contentScript.js"]
         }
     ],
     "permissions": [
@@ -21,6 +21,6 @@
     "action": {
         "browser_style": true,
         "default_title": "YouTube Simplified",
-        "default_popup": "popup.html"
+        "default_popup": "html/popup.html"
     }  
 }
