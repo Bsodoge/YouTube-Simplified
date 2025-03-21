@@ -7,8 +7,8 @@ const browserLinks = {
 }
 
 const browserImages = {
-    firefox: "images/firefox.svg",
-    chrome: "images/chrome.svg"
+    firefox: "img/firefox.svg",
+    chrome: "img/chrome.svg"
 }
 
 const browser = (function () {
