@@ -1,7 +1,7 @@
 {
     "manifest_version" : 3,
     "name": "YouTube Simplified - Hide Recommendations, Comments",
-    "version": "1.5",
+    "version": "1.6",
 
     "description": "A browser extension that simplifies YouTube's layout for maximum focus.",
     "homepage_url": "https://github.com/Bsodoge/YouTube-Simplified",
