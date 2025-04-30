@@ -14,14 +14,14 @@ YouTube Simplified is a browser extension designed to keep you focused and produ
 Features include:
 - Ability to hide the search bar
 - Ability to hide recommended videos (Everything from the home page to video end screen recommendations)
-- Ability to hide the left sidebar (The YouTube Logo, links to the reccomendation and subscription feed etc)
+- Ability to hide the left sidebar (The YouTube Logo, links to the recommendation and subscription feed etc)
 - Ability to hide profile and notifications
 - Ability to hide comments
 
 <h2>License</h2>
 MIT License
 
-Copyright (c) 2024 Bsodoge
+Copyright (c) 2025 Bsodoge
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
