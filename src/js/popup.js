@@ -1,7 +1,7 @@
 const buttonToggle = document.getElementById('activate');
 const optionsToggle = document.getElementById('options');
 const settingsContainer = document.getElementById('settings_container');
-const reccomendationsCheckBox = document.getElementById('items');
+const reccomendationsCheckBox = document.getElementById('related');
 const commentsCheckBox = document.getElementById('comments');
 const endCheckBox = document.getElementById('end');
 const centerCheckBox = document.getElementById('center');
@@ -12,7 +12,6 @@ let optionsToggled = false;
 let settings = {
     isToggled,
     elements: {
-        items: reccomendationsCheckBox.checked,
         start: optionsCheckBox.checked,
         guide: optionsCheckBox.checked,
         end: endCheckBox.checked,
@@ -70,7 +69,6 @@ const setSettings = () => {
     settings = {
         isToggled,
         elements: {
-            items: reccomendationsCheckBox.checked,
             start: optionsCheckBox.checked,
             guide: optionsCheckBox.checked,
             end: endCheckBox.checked,
