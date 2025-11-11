@@ -50,7 +50,7 @@ const callback = (mutationsList, observer) => {
 		if (document.getElementsByTagName('ytd-mini-guide-renderer')[0] && document.getElementsByTagName('ytd-mini-guide-renderer')[0].id !== 'left_sidebar') document.getElementsByTagName('ytd-mini-guide-renderer')[0].id = 'left_sidebar';
 		if (document.getElementsByTagName('ytd-browse')[0] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[0].id !== 'main') document.getElementsByTagName('ytd-browse')[0].id = 'ytd_browse';
 		if (document.getElementsByTagName('ytd-browse')[1] && (location.href === 'https://www.youtube.com/' || location.href.includes('https://www.youtube.com/?')) && document.getElementsByTagName('ytd-browse')[1].id !== 'main2') document.getElementsByTagName('ytd-browse')[1].id = 'ytd_browse2';
-		if (document.getElementsByClassName('ytp-endscreen-content')[0] && document.getElementsByClassName('ytp-endscreen-content')[0].id !== 'player_end') document.getElementsByClassName('ytp-endscreen-content')[0].id = 'player_end';
+		if (document.getElementsByClassName('ytp-fullscreen-grid-main-content')[0] && document.getElementsByClassName('ytp-fullscreen-grid-main-content')[0].id !== 'player_end') document.getElementsByClassName('ytp-fullscreen-grid-main-content')[0].id = 'player_end';
 		onLoad();
 	}
 };
